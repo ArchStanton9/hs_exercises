@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "process",
+            "group": "build",
+            "command": "ghc",
+            "args": [
+                "Main.hs"
+            ],
+            "options": {
+                "cwd": "./Greetings"
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "build",
+            "command": "./Main.exe",
+            "options": {
+                "cwd": "./Greetings"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
